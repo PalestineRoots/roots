@@ -5,7 +5,7 @@
 
 <?php $login_status = login();
 
-echo $login_status;
+if($login_status == "Successful login") header("Location: users.php");
 
 ?>
 
@@ -23,14 +23,14 @@ echo $login_status;
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-user"></i></span>
                     </div>
-                    <input type="text" name="username" class="form-control" placeholder="إسم المستخدم">
+                    <input type="text" name="username" class="form-control" placeholder="إسم المستخدم" autocomplete>
                 </div>
 
                 <div class="input-group form-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-key"></i></span>
                     </div>
-                    <input type="password" name="password" class="form-control" placeholder="كلمة المرور">
+                    <input type="password" name="password" class="form-control" placeholder="كلمة المرور" autocomplete>
                 </div>
 
                 <div class="form-group">
