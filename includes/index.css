@@ -81,3 +81,6 @@ body {
             border: 1px solid #ced4da;
             border-radius: 0;
         }
+        .myForm {
+        	font-family: 'Droid Arabic Kufi', serif;
+        }
