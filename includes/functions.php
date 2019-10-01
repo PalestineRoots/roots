@@ -16,13 +16,11 @@ function login(){
     
 
 global $connection;
-
 if(isset($_POST['login'])){
-
+    
    $username =  $_POST['username'];
    $password =  $_POST['password'];
     
-
     $username = mysqli_real_escape_string($connection,$username);
     $db_password =  mysqli_real_escape_string($connection,$password);
     
@@ -34,7 +32,6 @@ if(isset($_POST['login'])){
     }
 
     if(mysqli_num_rows($result)!=0){
-
     while($row = mysqli_fetch_assoc($result)){
         $user_id = $row['user_id'];
         $user_email = $row['user_email']; 
@@ -44,6 +41,7 @@ if(isset($_POST['login'])){
         $user_role = $row['user_role'];  
     }
 
+    $password = crypt($password,$user_password ); // the password crypt.
     
     if($username === $user_email && $password === $user_password){
         
@@ -53,7 +51,7 @@ if(isset($_POST['login'])){
       $_SESSION['user_id'] = $user_id;
       $_SESSION['user_firstname'] = $user_firstname;
       $_SESSION['user_lastname'] = $user_lastname;
-       $password = crypt($password,$user_password ); // the password crypt.
+
 
   }else{
        
