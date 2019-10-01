@@ -5,8 +5,8 @@
 
 <?php $login_status = login();
 
-if($login_status == "Successful login") header("Location: users.php");
-
+if($login_status == "Successful login")
+        header("Location: users.php");
 ?>
 
 
