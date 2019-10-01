@@ -68,4 +68,22 @@ if(isset($_POST['login'])){
 } 
 
 
+function addClient(){
+  global $connection;
+  if (isset($_POST['newuser'])) {
+    $client_firstname = $_POST['firstname'];
+    $client_lastname = $_POST['lastname'];
+    $client_major = $_POST['user_major'];
+    $client_id = $_POST['user_id'];
+    $client_email = $_POST['user_email'];
+    $client_qr = $_POST['user_qr'];
+    $query = "INSERT INTO `clients`(`client_id`, `client_firstname`, `client_lastname`, `client_email`, `client_major`, `client_qr`, `client_image`) VALUES ('{$client_id}','{$client_firstname}','{$client_lastname}','{$client_email}','{$client_major}','{$client_qr}','test')";
+    $result = mysqli_query($connection,$query);
+    if(!$result){
+    die("No Q. ".mysqli_error($connection));
+    }
+    header("Location: users.php");
+    }
+}
+
 ?>

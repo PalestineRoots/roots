@@ -25,7 +25,10 @@ if(!isset($_SESSION['user_role'])){
 	</form>
 
 
-<?php include "includes/clients.php";?>
+<?php
+addClient();
+
+ include "includes/clients.php";?>
 </div>
 
 

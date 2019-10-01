@@ -46,6 +46,15 @@
                             <input type="email" name="user_email" class="form-control" placeholder="somebody@example.com" required>
                         </div>
                       </div>
+
+                           <div class="form-group">
+                           <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-user-graduate"></i></span>
+            </div>
+                            <input type="text" name="user_major" class="form-control" placeholder="تخصص" required>
+                        </div>
+                      </div>
                                   <div class="form-group">
                            <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -66,8 +75,9 @@
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary mr-auto" data-dismiss="modal">Close</button>
-        <button name="newuser"type="submit" class="btn btn-success">Create</button>
+         <button name="newuser" type="submit" class="btn btn-success mr-auto">إضافة</button>
+        <button type="button" class="btn btn-secondary " data-dismiss="modal">إغلاق</button>
+       
       </div>
       </form>
     </div>
@@ -97,6 +107,9 @@
       <th scope="col">الإسم</th>
       <th scopr="col">رقم الهوية</th>
       <th scope="col">البريد الإلكتروني</th>
+      <th scope="col">تخصص</th>
+      <th scope="col">QR Code</th>
+      <th scope="col">صورة</th>
       <th scope="col" colspan="2"><div align="center"><i class="fas fa-cog"></i></div></th>
     </tr>
   </thead>
@@ -117,19 +130,21 @@ $countrows = mysqli_num_rows($result);// count the number of rows in the returne
                    else {
 $count = 0;
 while($row = mysqli_fetch_assoc($result)){
-$user_id = $row['user_id'];
-$user_firstname = $row['user_firstname'];
-$user_lastname = $row['user_lastname'];
-$user_major = $row['user_major'];
-$user_qr = $row['user_qr'];
-$user_image = $row['user_image'];
+$user_id = $row['client_id'];
+$user_firstname = $row['client_firstname'];
+$user_lastname = $row['client_lastname'];
+$user_email = $row['client_email'];
+$user_major = $row['client_major'];
+$user_qr = $row['client_qr'];
+$user_image = $row['client_image'];
          $count++;
 
 ?>
 <tr>
-<th scope="row"><?= $user_id?></th>
-<td><?= $user_id?></td>
+<th scope="row"><?= $count?></th>
 <td><?= $user_firstname." ".$user_lastname?></td>
+<td><?= $user_id?></td>
+<td><?= $user_email?></td>
 <td><?= $user_major?></td>
 <td><?= $user_qr?></td>
 <td><?= $user_image?></td>
