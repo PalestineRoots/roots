@@ -15,9 +15,9 @@
           خيارات ادارة
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">ادارة بطاقات</a>
+          <a class="dropdown-item" href="#">إدارة البطاقات</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">اذدارة مستحدمين</a>
+          <a class="dropdown-item" href="#">إدارة المستخدمين</a>
         </div>
       </li>
 <?php }?>
