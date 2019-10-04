@@ -86,4 +86,38 @@ function addClient(){
     }
 }
 
+function editClient(){
+  global $connection;
+  if (isset($_POST['existinguser'])) {
+    $client_firstname = $_POST['firstname'];
+    $client_lastname = $_POST['lastname'];
+    $client_major = $_POST['user_major'];
+    $client_id = $_POST['user_id'];
+    $client_email = $_POST['user_email'];
+    $client_qr = $_POST['user_qr'];
+    $query = "UPDATE `clients` SET client_id='{$client_id}', client_firstname='{$client_firstname}', client_lastname='{$client_lastname}', client_email='{$client_email}', client_major='{$client_major}', client_qr='{$client_qr}', client_image='test' WHERE client_id={$client_id}";
+    $result = mysqli_query($connection,$query);
+    if(!$result){
+    die("No Q. ".mysqli_error($connection));
+    }
+    header("Location: users.php");
+    }
+}
+
+function deleteClient(){
+
+  global $connection;
+  if(isset($_POST['deleteexistinguser'])){
+    $delete_id = $_POST['delete_id'];
+    $delete_firstname = $_POST['delete_firstname'];
+    $words = split("[ ]+", $delete_firstname);
+    $query = "DELETE FROM clients WHERE client_id={$delete_id}";
+    $result = mysqli_query($connection,$query);
+    if(!$result){
+    die("No Q. ".mysqli_error($connection));
+    }
+    header("Location: users.php");
+    }
+  }
+
 ?>

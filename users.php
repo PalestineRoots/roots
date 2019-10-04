@@ -27,7 +27,8 @@ if(!isset($_SESSION['user_role'])){
 
 <?php
 addClient();
-
+editClient();
+deleteClient();
  include "includes/clients.php";?>
 </div>
 
