@@ -10,7 +10,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form role="form" action="users.php" method="post" >
+        <form role="form" action="users.php" method="post" enctype="multipart/form-data">
    <div class="form-group">
                         <div class="row">
                         <div class="col">
@@ -64,12 +64,14 @@
                         </div>
                       </div>
 
-                                                        <div class="form-group">
+                           <div class="form-group">
                            <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fas fa-image"></i></span>
             </div>
-                            <input type="text" name="user_qr" class="form-control" placeholder="رصورة" required>
+                            <input type="file" name="user_img" class="form-control" placeholder="رصورة" required>
+                            
+                    <img id='img-upload'/>
                         </div>
                       </div>
 
@@ -98,7 +100,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form role="form" action="users.php" method="post" >
+        <form role="form" action="users.php" method="post" enctype="multipart/form-data">
 
    <div class="form-group">
                         <div class="row">

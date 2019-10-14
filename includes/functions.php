@@ -77,7 +77,14 @@ function addClient(){
     $client_id = $_POST['user_id'];
     $client_email = $_POST['user_email'];
     $client_qr = $_POST['user_qr'];
-    $query = "INSERT INTO `clients`(`client_id`, `client_firstname`, `client_lastname`, `client_email`, `client_major`, `client_qr`, `client_image`) VALUES ('{$client_id}','{$client_firstname}','{$client_lastname}','{$client_email}','{$client_major}','{$client_qr}','test')";
+    $client_img = $_FILES['user_img']['name'];//to catch image
+    $client_img_temp= $_FILES['user_img']['tmp_name'];//to catch the image temp location
+
+    //$card_tags = $card_name.", ".$card_username.", ".$card_profession.", ";
+
+    move_uploaded_file($client_img_temp,"assets/verifications/$client_img");
+    
+    $query = "INSERT INTO `clients`(`client_id`, `client_firstname`, `client_lastname`, `client_email`, `client_major`, `client_qr`, `client_image`) VALUES ('{$client_id}','{$client_firstname}','{$client_lastname}','{$client_email}','{$client_major}','{$client_qr}','{$client_img}')";
     $result = mysqli_query($connection,$query);
     if(!$result){
     die("No Q. ".mysqli_error($connection));
