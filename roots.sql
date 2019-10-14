@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 01, 2019 at 04:35 PM
+-- Generation Time: Oct 14, 2019 at 02:27 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.14
 
@@ -37,6 +37,7 @@ CREATE TABLE IF NOT EXISTS `clients` (
   `client_major` varchar(255) NOT NULL,
   `client_qr` varchar(255) NOT NULL,
   `client_image` varchar(255) NOT NULL,
+  `client_tags` varchar(255) NOT NULL,
   PRIMARY KEY (`client_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -44,9 +45,8 @@ CREATE TABLE IF NOT EXISTS `clients` (
 -- Dumping data for table `clients`
 --
 
-INSERT INTO `clients` (`client_id`, `client_firstname`, `client_lastname`, `client_email`, `client_major`, `client_qr`, `client_image`) VALUES
-(112445467, 'test', 'test', 'test@jothourr.com', '', 'asd', 'test'),
-(123564732, 'test', 'test', 'm@tes.c', 'IT', 'test', 'test');
+INSERT INTO `clients` (`client_id`, `client_firstname`, `client_lastname`, `client_email`, `client_major`, `client_qr`, `client_image`, `client_tags`) VALUES
+(342525, 'mshmouf', 'ndsfgdg', 'tes@t.v', 'PJ', 'sdgf', 'mahmoud ghonim.jpg', 'mshmouf, ndsfgdg, PJ, 342525, ');
 
 -- --------------------------------------------------------
 

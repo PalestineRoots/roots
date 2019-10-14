@@ -80,11 +80,11 @@ function addClient(){
     $client_img = $_FILES['user_img']['name'];//to catch image
     $client_img_temp= $_FILES['user_img']['tmp_name'];//to catch the image temp location
 
-    //$card_tags = $card_name.", ".$card_username.", ".$card_profession.", ";
+    $client_tags = $client_firstname.", ".$client_lastname.", ".$client_major.", ".$client_id.", ";
 
     move_uploaded_file($client_img_temp,"assets/verifications/$client_img");
     
-    $query = "INSERT INTO `clients`(`client_id`, `client_firstname`, `client_lastname`, `client_email`, `client_major`, `client_qr`, `client_image`) VALUES ('{$client_id}','{$client_firstname}','{$client_lastname}','{$client_email}','{$client_major}','{$client_qr}','{$client_img}')";
+    $query = "INSERT INTO `clients`(`client_id`, `client_firstname`, `client_lastname`, `client_email`, `client_major`, `client_qr`, `client_image`, `client_tags`) VALUES ('{$client_id}','{$client_firstname}','{$client_lastname}','{$client_email}','{$client_major}','{$client_qr}','{$client_img}','{$client_tags}')";
     $result = mysqli_query($connection,$query);
     if(!$result){
     die("No Q. ".mysqli_error($connection));

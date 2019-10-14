@@ -14,12 +14,12 @@ if(!isset($_SESSION['user_role'])){
 	<h1>بطاقة الطالب العربي</h1>
 
 <hr>
-	<form>
+	<form action="users.php" method="get">
 		
 		      <div class="d-flex justify-content-center h-100">
         <div class="searchbar">
-          <input class="search_input" type="text" name="" placeholder="بحث ...">
-          <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+          <input class="search_input" type="text" name="search" placeholder="بحث ...">
+          <button class="btn search_icon" type="submit"><i class="fas fa-search"></i></button>
         </div>
       </div>
 	</form>
@@ -29,7 +29,15 @@ if(!isset($_SESSION['user_role'])){
 addClient();
 editClient();
 deleteClient();
- include "includes/clients.php";?>
+
+if(isset($_GET['search'])){
+	$client_tags = $_GET['search'];
+	include "includes/results.php";
+} else {
+	include "includes/clients.php";
+}
+
+?>
 </div>
 
 
