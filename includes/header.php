@@ -54,6 +54,38 @@ include "functions.php";
       });
 </script>
 
+ <script>
+      $(document).ready(function (){
+        $('.editrootsbtn').on('click',function () {
+          $tr = $(this).closest('tr');
+          var data = $tr.children("td").map(function (){
+            return $(this).text();
+          }).get();
+          console.log(data);
+          var fullname = data[1].split(" ");
+          $('#rootsuser_firstname').val(fullname[0]);
+          $('#rootsuser_lastname').val(fullname[1]);
+          $('#rootsuser_email').val(data[2]);
+          $('#rootsuser_role').val(data[3]);
+        });
+      });
+</script>
+
+<script>
+  
+      $(document).ready(function (){
+        $('.deleterootsbtn').on('click',function () {
+          $tr = $(this).closest('tr');
+          var data = $tr.children("td").map(function (){
+            return $(this).text();
+          }).get();
+          console.log(data);
+          $('#deleteroots_firstname').val(data[1]);
+          $('#deleteroots_id').val(data[0]);
+        });
+      });
+</script>
+
 <title></title>
 </head>
 <body>

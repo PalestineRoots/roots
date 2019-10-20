@@ -51,3 +51,8 @@
     border-radius: 50%;
     color:white;
     }
+    #logo{
+        border-radius: 30%;
+        max-width: 50%;
+        border-style: outset;
+    }

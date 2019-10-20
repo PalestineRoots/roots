@@ -127,4 +127,52 @@ function deleteClient(){
     }
   }
 
+  function addUser(){
+  global $connection;
+  if (isset($_POST['newrootsuser'])) {
+    $user_firstname = $_POST['rootsuser_firstname'];
+    $user_lastname = $_POST['rootsuser_lastname'];
+    $user_email = $_POST['rootsuser_email'];
+    $user_password = $_POST['rootsuser_password'];
+    $user_role = $_POST['rootsuser_role'];
+    $query = "INSERT INTO `users`(`user_id`, `user_firstname`, `user_lastname`, `user_email`, `user_password`, `user_role`, `user_randsalt`) VALUES (' ','{$user_firstname}','{$user_lastname}','{$user_email}','{$user_password}','{$user_role}','test')";
+    $result = mysqli_query($connection,$query);
+    if(!$result){
+    die("No Q. ".mysqli_error($connection));
+    }
+    header("Location: management.php");
+    }
+}
+
+function editUser(){
+  global $connection;
+  if (isset($_POST['existingrootsuser'])) {
+    $user_id = $_POST['rootsuser_id'];
+    $user_firstname = $_POST['rootsuser_firstname'];
+    $user_lastname = $_POST['rootsuser_lastname'];
+    $user_email = $_POST['rootsuser_email'];
+    $user_password = $_POST['rootsuser_password'];
+    $user_role = $_POST['rootsuser_role'];
+    $query = "UPDATE users SET user_id='{$user_id}', user_firstname='{$user_firstname}', user_lastname='{$user_lastname}', user_email='{$user_email}', user_password='{$user_password}', user_role='{$user_role}', user_randsalt='test' WHERE user_id={$user_id}";
+    $result = mysqli_query($connection,$query);
+    if(!$result){
+    die("No Q. ".mysqli_error($connection));
+    }
+    header("Location: management.php");
+    }
+}
+
+function deleteUser(){
+
+  global $connection;
+  if(isset($_POST['deleteexistingrootsuser'])){
+    $deleteuser_id = $_POST['deleteroots_id'];
+    $query = "DELETE FROM users WHERE user_id={$deleteuser_id}";
+    $result = mysqli_query($connection,$query);
+    if(!$result){
+    die("No Q. ".mysqli_error($connection));
+    }
+    header("Location: management.php");
+    }
+  }
 ?>
