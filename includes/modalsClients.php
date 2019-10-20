@@ -2,7 +2,7 @@
 <div class="modal fade" id="adduser" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header table-dark">
         <h5 class="modal-title" id="exampleModalLongTitle">إضافة طالب</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -68,7 +68,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text"><i class="fas fa-image"></i></span>
             </div>
-                            <input type="file" name="user_img" class="form-control" placeholder="رصورة" required>
+                            <input type="file" name="user_img" class="form-control" placeholder="رصورة" >
                             
                     <img id='img-upload'/>
                         </div>
@@ -92,7 +92,7 @@
 <div class="modal fade" id="edituser" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header table-dark">
         <h5 class="modal-title" id="exampleModalLongTitle">تعديل</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -181,7 +181,7 @@
 <div class="modal fade" id="deleteuser" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header table-dark">
         <h4 class="modal-title" id="exampleModalLongTitle">حذف طالب/ة</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -222,3 +222,16 @@
         </div>
       </div>
 <!-- End of deleting student Modal-->
+
+<!-- Creates the bootstrap modal where the image will appear -->
+<div class="modal fade" id="imagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-body table-dark imagestyle">
+         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <img id="imagepreview" class="img-fluid img-thumbnail" >
+      </div>
+
+    </div>
+  </div>
+</div>

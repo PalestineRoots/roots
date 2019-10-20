@@ -86,6 +86,22 @@ include "functions.php";
       });
 </script>
 
+<script>
+      $(document).ready(function (){
+        $(".avatar").on("click", function() {
+          document.getElementById("imagepreview").setAttribute("src",$(this).attr('src'));
+        });
+      });
+</script>
+
+<script>
+      $(document).ready(function (){
+        $(".avatartwo").on("click", function() {
+          document.getElementById("resultsimagepreview").setAttribute("src",$(this).attr('src'));
+        });
+      });
+</script>
+
 <title></title>
 </head>
 <body>

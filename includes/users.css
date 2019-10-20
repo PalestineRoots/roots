@@ -56,3 +56,17 @@
         max-width: 50%;
         border-style: outset;
     }
+
+    .avatar {
+      vertical-align: middle;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+
+    .avatartwo {
+              vertical-align: middle;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }

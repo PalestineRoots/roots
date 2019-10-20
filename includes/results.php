@@ -224,6 +224,19 @@
       </div>
 <!-- End of deleting student Modal-->
 
+<!-- Show image modal -->
+<div class="modal fade" id="resultsimagemodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-body table-dark imagestyle">
+         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <img id="resultsimagepreview" class="img-fluid img-thumbnail" >
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- End of show image modal-->
 
   <div class="row table-responsive">
            <div class="panel panel-default panel-table">
@@ -285,7 +298,16 @@ $user_image = $row['client_image'];
 <td><?= $user_email?></td>
 <td><?= $user_major?></td>
 <td><?= $user_qr?></td>
-<td><?= $user_image?></td>
+<?php
+ if($user_image!=NULL){
+ ?>
+<td><img src="<?php echo "/roots/assets/verifications/".$user_image ?>" alt="Avatar" class="avatartwo" id="resultsimageresource" data-toggle="modal" data-target="#resultsimagemodal"></td>
+<?php }?>
+<?php
+ if($user_image==NULL){
+ ?>
+<td></td>
+<?php }?>
 <td align="center"><button type="button" class="btn btn-sm btn-primary editbtn" data-toggle="modal" data-target="#edituser" ><i class="fas fa-edit"></i></button></td>
 <!--  <button data-toggle="modal" data-target="#edituser<?=$user_id?>" class="btn btn-sm btn-primary"></button> -->
 <td align="center"><button type="button" class="btn btn-sm btn-danger deletebtn" data-toggle="modal" data-target="#deleteuser" ><i class="fas fa-trash-alt"></i></button></td>

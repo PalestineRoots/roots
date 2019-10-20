@@ -1,6 +1,4 @@
-
 <?php include "includes/modalsClients.php";?>
-
 
   <div class="row table-responsive">
            <div class="panel panel-default panel-table">
@@ -62,12 +60,20 @@ $user_image = $row['client_image'];
 <td><?= $user_email?></td>
 <td><?= $user_major?></td>
 <td><?= $user_qr?></td>
-<td><?= $user_image?></td>
+<?php
+ if($user_image!=NULL){
+ ?>
+<td><img src="<?php echo "/roots/assets/verifications/".$user_image ?>" alt="Avatar" class="avatar" id="imageresource" data-toggle="modal" data-target="#imagemodal"></td>
+<?php }?>
+<?php
+ if($user_image==NULL){
+ ?>
+<td></td>
+<?php }?>
 <td align="center"><button type="button" class="btn btn-sm btn-primary editbtn" data-toggle="modal" data-target="#edituser" ><i class="fas fa-edit"></i></button></td>
 <!--  <button data-toggle="modal" data-target="#edituser<?=$user_id?>" class="btn btn-sm btn-primary"></button> -->
 <td align="center"><button type="button" class="btn btn-sm btn-danger deletebtn" data-toggle="modal" data-target="#deleteuser" ><i class="fas fa-trash-alt"></i></button></td>
 </tr>
-
 
         </div>
 
